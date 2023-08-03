@@ -99,8 +99,8 @@ ynh_package_install libargon2-1 libsodium23 libzip5 memcached php-igbinary php-m
 
 
 ## Start php7
-systemctl enable php7.2-fpm
-systemctl start php7.2-fpm
+systemctl enable php8.2-fpm
+systemctl start php8.2-fpm
 
 #=================================================
 # CREATE A MYSQL DATABASE
@@ -207,7 +207,7 @@ mkdir -p /srv/daemon /srv/daemon-data
 pushd /srv/daemon
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 ynh_package_install nodejs make gcc g++
-curl -L https://github.com/pterodactyl/daemon/releases/download/v0.6.11/daemon.tar.gz | tar --strip-components=1 -xzv
+curl -L https://github.com/pterodactyl/daemon/releases/download/v0.6.13/daemon.tar.gz | tar --strip-components=1 -xzv
 npm install --only=production
 npm audit fix
 sudo npm start
